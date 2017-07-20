@@ -1,0 +1,1 @@
+var jabez_api="http://35.164.164.142/gexOpenAPI/gexOpenAPI.aspx";

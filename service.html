@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="keywords" content="資訊顧問,ERP,進銷存,薪資系統,會計軟體,專案設計,手機APP,CRM" />
+    <meta name="author" content="捷克仕移動" />
+    <meta name="copyright" content="捷克仕移動" />
+    <title>首頁 - 捷克仕移動</title>
+    <!-- CSS -->
+    <link href="inc/js/slick/slick.css" rel="stylesheet" type="text/css">
+    <link href="tem/tw/css/style.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="inc/js/jquery.js"></script>
+</head>
+<body>
+    <div id="container">    
+        <script type="text/javascript" src="inc\js\head1.js"></script>
+        <!-- 頁首 END -->
+        <!-- 各單元內容 START -->
+        <section id="banner" data-info="service">
+            <figure class="bg">
+                <img src="tem/tw/images/banner-service.jpg" width="1600" height="340" alt="" />
+            </figure>
+            <div class="text">
+                <h1 class="title">服務項目</h1>
+                <p>「用心的服務」成就「滿意的口碑」</p>
+            </div>
+        </section>
+        <main id="content">
+            <div id="service">
+                <section class="sec1">
+                	<div class="inner-wrap">
+                		<div class="text">
+                            <dl>
+	                            <dt class="title"><span>1</span>系統整合評估</dt>
+	                            <dd>先了解客戶需求，評估標準版本的適用程度。</dd>
+                                <dd>標準版本包括會計、進銷存及人事薪資等管理系統。</dd>
+                                <dd>根據實際需求，提出完整的建議解決方案。</dd>
+
+	                            <dt class="title"><span>2</span>專案開發服務</dt>
+	                            <dd>如果客戶的需求並非現有的標準產品，則會建議採用專案開發。</dd>
+	                            <dd>與其他軟體廠商不同的是，我們有一套完整的快速開發工具，其中包括一般的輸入表單及統計分析報表的2支 Wizard。</dd>
+                                <dd>可以讓程式設計師，快速地產生相關的程式，大幅縮短開發的時間與成本。</dd>
+	                            
+                                <dt class="title"><span>3</span>協同開發服務</dt>
+	                            <dd>我們已經開發好一套完整的 Wizard 程式工具，標準程式就是用工具開發出來的。</dd>
+	                            <dd>針對已有資訊部門的中大型企業或是軟體公司，我們可以提供協同開發的業務，在已完成的產品基礎上，客戶可依企業本身的需求，強化系統的功能，並可快速建立自有獨特的資訊系統。</dd>
+
+                                <dt class="title"><span>4</span>行動APP方案</dt>
+	                            <dd>天下武功 唯快不破，我們可以快速開發原生的 APP，操作起來流暢又快速，絕對不是網頁式程式可以比擬的。</dd>
+	                            <dd>如果您的現有業務模式，並不需要使用 APP，我們會建議您再仔細想想、多看看。</dd>
+	                            <dd>行動APP 通常是現有網站的延伸運用，關於後端的資料存取，我們自行開發了一套 OpenAPI，可以讓前端程式統一呼叫。</dd>
+                            </dl>
+                        </div>
+	                    <figure class="figure">
+                            <img src="tem/tw/images/service1.png" width="748" height="525" alt="" />
+                        </figure>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <!-- 各單元內容 END -->
+        <!-- 頁尾 START  -->
+    		<script type="text/javascript" src="inc\js\footer1.js"></script>
+				<script>
+				  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','../www.google-analytics.com/analytics.js','ga');
+				
+				  ga('create', 'UA-38826271-23', 'auto');
+				  ga('send', 'pageview');
+				
+				</script>        <div id="mask-bg"></div><!-- 行動裝置遮罩 -->
+        <!-- 頁尾 END -->
+    </div>
+    <!-- 各單元JS、CSS加載設定 START -->
+    <script type="text/javascript" src="inc/js/backstretch/backstretch.js"></script>
+    <script type="text/javascript" src="inc/js/slick/slick.min.js"></script>
+    <script type="text/javascript" src="inc/js/comm.min.js"></script>
+    <script>
+    (function ($) {
+        $(function () {
+            var $win = $(window),
+                $banner = $('#banner'),
+                _bannerImg = [];
+
+            /** banner區塊輪播，背景滿版 */
+            $banner.find('.bg').each(function () {
+                var _src = $(this).find('img')[0].src;
+                _bannerImg.push(_src);
+            }).end().backstretch(_bannerImg, {fade:true}).backstretch("pause");
+
+        })
+    })(jQuery);
+    </script>
+    <!-- 各單元JS、CSS加載設定 END -->
+</body>
+
+</html>

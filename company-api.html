@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="zh-tw">
+    <title>首頁 - 捷克仕移動</title>
+    <!-- CSS -->
+    <script type="text/javascript" src="inc/js/jquery.js"></script>
+    <link rel="stylesheet" href="js/styles/demo.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="http://unpkg.com/iview/dist/styles/iview.css">
+    <script src="http://vuejs.org/js/vue.min.js"></script>
+    <script src="http://unpkg.com/iview/dist/iview.min.js"></script>
+    <script src="inc/js/cmm.js"></script>
+</head>
+<body>
+    <div id="app">
+	    <table border="1">
+                <tr>
+                  <td>Name</td><td>{{title[0].Xingming}}</td>                 
+                </tr>
+                <tr>
+                  <td>ID</td><td>{{title[0].CID}}</td>
+                </tr>
+                <tr>
+                  <td>Final</td><td>{{title[0].Jifen}}</td>
+                </tr>
+            </table>
+
+            <input id="uid" v-model="userid" placeholder="input user id">
+            <button id="search" @click="showData" class="btn btn-primary btn-xs " id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing">Load Data</button>
+            
+            <table border="1">
+	       <tr v-for="data in datas">
+                   <td>{{data.rowid}}</td>
+                   <td>{{data.pay}}</td>
+        	   <td>{{data.Xingming}}</td>
+               	   <td>{{data.Jine}}</td>
+               	   <td>{{data.PayFinal}}</td>
+               </tr>
+            </table>
+    </div>
+    
+    <script>
+        //
+        $(document).ready(function() {
+          jQuery.ajax({
+	        type: 'Get',
+          	url: jabez_api+"?action=B&rettype=json&sqltype=sp&tagid=spUserData&sqlwhere="+vum.userid+"&checksum=***",
+	        success: function (data) {
+	            vum.title = JSON.parse(data);
+	        }
+	  })
+	});
+
+        var vum = new Vue({
+            el: '#app',
+            data: {
+               userid: 238,   
+               datas: "",
+	       title: ""
+            },
+            methods:{
+	        showData:function () {
+	            jQuery.ajax({
+	                type: 'Get',
+        	        url: jabez_api+"?action=B&sqltype=sp&rettype=json&tagid=spShowPayDetail&sqlwhere="+this.userid+",'2016-01-01','2016-12-30','RukuSj desc'&checksum=***",
+	                success: function (data) {
+	                    vum.datas = JSON.parse(data);
+	                }
+	            });		    
+	        }
+	    }
+        });
+   
+    </script>
+
+</body>
+
+</html>
